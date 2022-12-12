@@ -16,6 +16,13 @@
         "jsx": "preserve",
         "incremental": true
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".eslintrc.js", ".prettierrc.js"],
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        ".eslintrc.js",
+        ".prettierrc.js",
+        "src/constants/navbarListItems.js"
+    ],
     "exclude": ["node_modules"]
 }

@@ -23,6 +23,7 @@ module.exports = {
         'plugin:css-modules/recommended',
     ],
     rules: {
+        'prettier/prettier': ['error', { printWidth: 120 }],
         'react/prop-types': 0,
         '@typescript-eslint/no-unused-vars': [
             'warn',
