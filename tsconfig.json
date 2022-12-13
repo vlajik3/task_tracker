@@ -22,7 +22,7 @@
         "**/*.tsx",
         ".eslintrc.js",
         ".prettierrc.js",
-        "src/constants/navbarListItems.js"
+        "src/constants/navbarItems.tsx"
     ],
     "exclude": ["node_modules"]
 }

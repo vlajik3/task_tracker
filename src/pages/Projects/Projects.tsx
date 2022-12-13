@@ -1,15 +1,17 @@
+import Link from '@mui/material/Link';
 import React from 'react';
-
-import styles from './Projects.module.scss';
+import { useParams } from 'react-router-dom';
 
 interface ProjectsProps {
     prop?: string;
 }
 
 const Projects = (props: ProjectsProps) => {
-    const { prop } = props;
-
-    return <div>Projects</div>;
+    return (
+        <>
+            <div style={{ textAlign: 'center' }}>Projects</div>
+        </>
+    );
 };
 
 export default Projects;

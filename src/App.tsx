@@ -3,18 +3,17 @@ import React, { Dispatch, SetStateAction, useState } from 'react';
 import Router from './components/Router';
 import { Navbar } from './components/Navbar/Navbar';
 import { createContext } from 'react';
+import { useLocation } from 'react-router-dom';
+import { IContext } from './interfaces/interfaces';
 
 export const App = () => {
     const [isAuth, setIsAuth] = useState(true);
     type themeType = 'light' | 'dark';
     const [theme, setTheme] = useState<themeType>('light');
+    const navigation = useLocation();
+    const arr = navigation.pathname.split('/');
+    const pathName = arr[arr.length - 1];
 
-    interface IContext {
-        isAuth: boolean;
-        setIsAuth: Dispatch<SetStateAction<boolean>>;
-        theme: themeType;
-        setTheme: Dispatch<SetStateAction<themeType>>;
-    }
     const defaultContext = {
         isAuth,
         setIsAuth,
@@ -24,7 +23,7 @@ export const App = () => {
     const AppContext = createContext<IContext>(defaultContext);
     return (
         <AppContext.Provider value={{ isAuth, setIsAuth, theme, setTheme }}>
-            <Navbar />
+            <Navbar pathName={pathName} />
             <Router />
         </AppContext.Provider>
     );
